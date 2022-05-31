@@ -4,7 +4,7 @@ A minimal demo for sending an SMS notification to customers when an SKU that had
 
 ---
 
-Add your credentials in `.env`
+Add your credentials in `.env`:
 
 ```bash
 TWILIO_ACCOUNT_SID=
@@ -12,13 +12,19 @@ TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_NUMBER=
 ```
 
-Start a ngrok HTTP tunnel listening for HTTP/HTTPS traffic on port 9000
+Start the local server:
+
+```bash
+node server.js
+```
+
+Start a ngrok HTTP tunnel listening for HTTP/HTTPS traffic on port 9000:
 
 ```bash
 ngrok http 9000
 ```
 
-Create a new `in_stock_subscriptions.notify` webhook using the CLI
+Create a new `in_stock_subscriptions.notify` webhook using the CLI:
 
 ```bash
 cl webhooks:create \
