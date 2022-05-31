@@ -1,0 +1,42 @@
+{
+  "data": {
+    "id": "JrkjIGKKAm",
+    "type": "in_stock_subscriptions",
+    "links": { "self": "/api/in_stock_subscriptions/JrkjIGKKAm" },
+    "attributes": {
+      "status": "notified",
+      "customer_email": "bolaji@commercelayer.io",
+      "sku_code": "TOTEXXAUFFFFFF000000XXXX",
+      "stock_threshold": 1,
+      "created_at": "2022-05-31T21:43:12.952Z",
+      "updated_at": "2022-05-31T21:43:16.304Z",
+      "reference": null,
+      "reference_origin": null,
+      "metadata": {
+        "customer_name": "Bolaji Ayodeji",
+        "customer_telephone": 2341234567890
+      }
+    },
+    "relationships": {
+      "market": {
+        "links": {
+          "self": "/api/in_stock_subscriptions/JrkjIGKKAm/relationships/market",
+          "related": "/api/in_stock_subscriptions/JrkjIGKKAm/market"
+        }
+      },
+      "customer": {
+        "links": {
+          "self": "/api/in_stock_subscriptions/JrkjIGKKAm/relationships/customer",
+          "related": "/api/in_stock_subscriptions/JrkjIGKKAm/customer"
+        }
+      },
+      "sku": {
+        "links": {
+          "self": "/api/in_stock_subscriptions/JrkjIGKKAm/relationships/sku",
+          "related": "/api/in_stock_subscriptions/JrkjIGKKAm/sku"
+        }
+      }
+    },
+    "meta": { "mode": "test", "organization_id": "enoZOFLqNX" }
+  }
+}
