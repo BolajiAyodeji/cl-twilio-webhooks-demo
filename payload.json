@@ -1,15 +1,15 @@
 {
   "data": {
-    "id": "JrkjIGKKAm",
+    "id": "JawnILovoQ",
     "type": "in_stock_subscriptions",
-    "links": { "self": "/api/in_stock_subscriptions/JrkjIGKKAm" },
+    "links": { "self": "/api/in_stock_subscriptions/JawnILovoQ" },
     "attributes": {
       "status": "notified",
       "customer_email": "bolaji@commercelayer.io",
       "sku_code": "TOTEXXAUFFFFFF000000XXXX",
       "stock_threshold": 1,
-      "created_at": "2022-05-31T21:43:12.952Z",
-      "updated_at": "2022-05-31T21:43:16.304Z",
+      "created_at": "2022-06-01T11:33:49.056Z",
+      "updated_at": "2022-06-01T11:34:05.283Z",
       "reference": null,
       "reference_origin": null,
       "metadata": {
@@ -20,20 +20,20 @@
     "relationships": {
       "market": {
         "links": {
-          "self": "/api/in_stock_subscriptions/JrkjIGKKAm/relationships/market",
-          "related": "/api/in_stock_subscriptions/JrkjIGKKAm/market"
+          "self": "/api/in_stock_subscriptions/JawnILovoQ/relationships/market",
+          "related": "/api/in_stock_subscriptions/JawnILovoQ/market"
         }
       },
       "customer": {
         "links": {
-          "self": "/api/in_stock_subscriptions/JrkjIGKKAm/relationships/customer",
-          "related": "/api/in_stock_subscriptions/JrkjIGKKAm/customer"
+          "self": "/api/in_stock_subscriptions/JawnILovoQ/relationships/customer",
+          "related": "/api/in_stock_subscriptions/JawnILovoQ/customer"
         }
       },
       "sku": {
         "links": {
-          "self": "/api/in_stock_subscriptions/JrkjIGKKAm/relationships/sku",
-          "related": "/api/in_stock_subscriptions/JrkjIGKKAm/sku"
+          "self": "/api/in_stock_subscriptions/JawnILovoQ/relationships/sku",
+          "related": "/api/in_stock_subscriptions/JawnILovoQ/sku"
         }
       }
     },
