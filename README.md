@@ -32,3 +32,14 @@ cl webhooks:create \
 	-t "in_stock_subscriptions.notify" \
 	-u "https://39cb-8-21-8-251.eu.ngrok.io/callback"
 ```
+
+Create a new stock subscription associated with some custom metadata (telephone number and customer name) and required relationships (market ID, customer’s ID, and SKU ID).
+
+```bash
+cl resources:create in_stock_subscriptions -m \
+	customer_telephone="+12345678910" \
+	customer_name="Bolaji Ayodeji" -r \
+	market="VgKNLhKGBj" \
+	customer="OwyehaRvJX" \
+	sku="ZrxeSKVNRB
+```
