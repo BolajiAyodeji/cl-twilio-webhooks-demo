@@ -6,6 +6,7 @@ const hmacSHA256 = require("crypto-js/hmac-sha256");
 const app = express();
 const port = 9000;
 
+// Define Twilio credentials
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
@@ -25,10 +26,16 @@ app.post("/callback", (req, res) => {
     const payload = req.body;
 
     // Send SMS with Twilio
+
+    // We're fetching the customer's name and telephone number from the custom metadata
     const customerName = payload.data.attributes.metadata.customer_name;
     const customerTelephone =
       payload.data.attributes.metadata.customer_telephone;
+
+    // We're fetching the SKU name from the included sku relationship
     const skuName = payload.included.map((item) => item.attributes.name);
+
+    // We're fetching the SKU code from the payload's default attributes
     const skuCode = payload.data.attributes.sku_code;
 
     client.messages
