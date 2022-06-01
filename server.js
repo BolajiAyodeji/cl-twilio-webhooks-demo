@@ -27,15 +27,15 @@ app.post("/callback", (req, res) => {
 
     // Send SMS with Twilio
 
-    // We're fetching the customer's name and telephone number from the custom metadata
+    // Fetch the customer's name and telephone number from the custom metadata
     const customerName = payload.data.attributes.metadata.customer_name;
     const customerTelephone =
       payload.data.attributes.metadata.customer_telephone;
 
-    // We're fetching the SKU name from the included sku relationship
+    // Fetch the SKU name from the included sku relationship
     const skuName = payload.included.map((item) => item.attributes.name);
 
-    // We're fetching the SKU code from the payload's default attributes
+    // Fetch the SKU code from the payload's default attributes
     const skuCode = payload.data.attributes.sku_code;
 
     client.messages
