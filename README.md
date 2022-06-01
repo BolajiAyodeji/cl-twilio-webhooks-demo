@@ -7,9 +7,10 @@ A minimal demo for sending an SMS notification to customers when an SKU that had
 Add your credentials in `.env`:
 
 ```bash
-TWILIO_ACCOUNT_SID=
-TWILIO_AUTH_TOKEN=
-TWILIO_PHONE_NUMBER=
+TWILIO_ACCOUNT_SID=""
+TWILIO_AUTH_TOKEN=""
+TWILIO_PHONE_NUMBER=""
+CL_SHARED_SECRET=""
 ```
 
 Start the local server:
@@ -28,18 +29,19 @@ Create a new `in_stock_subscriptions.notify` webhook using the CLI:
 
 ```bash
 cl webhooks:create \
-	-n "Back In Stock Notifications" \
-	-t "in_stock_subscriptions.notify" \
-	-u "https://39cb-8-21-8-251.eu.ngrok.io/callback"
+   -n "Back In Stock Notifications" \
+   -t "in_stock_subscriptions.notify" \
+   -u "https://39cb-8-21-8-251.eu.ngrok.io/callback" \
+   -i "sku"
 ```
 
 Create a new stock subscription associated with some custom metadata (telephone number and customer name) and required relationships (market ID, customer’s ID, and SKU ID).
 
 ```bash
 cl resources:create in_stock_subscriptions -m \
-	customer_telephone="+12345678910" \
-	customer_name="Bolaji Ayodeji" -r \
-	market="VgKNLhKGBj" \
-	customer="OwyehaRvJX" \
-	sku="ZrxeSKVNRB
+   customer_telephone="+12345678910" \
+   customer_name="Bolaji Ayodeji" -r \
+   market="VgKNLhKGBj" \
+   customer="OwyehaRvJX" \
+   sku="ZrxeSKVNRB
 ```

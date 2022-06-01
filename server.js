@@ -28,11 +28,12 @@ app.post("/callback", (req, res) => {
     const customerName = payload.data.attributes.metadata.customer_name;
     const customerTelephone =
       payload.data.attributes.metadata.customer_telephone;
+    const skuName = payload.included.map((item) => item.attributes.name);
     const skuCode = payload.data.attributes.sku_code;
 
     client.messages
       .create({
-        body: `Hi ${customerName}! \n The item with SKU code: ${skuCode} is now back in stock 🎉. You can place an order right away here: https://commercelayer.io/developers. Cheers!`,
+        body: `Hi ${customerName}!\n\nThe ${skuName} (${skuCode}) is now back in stock 🎉. You can place your order right away here: https://commercelayer.io/developers. Cheers!`,
         from: process.env.TWILIO_PHONE_NUMBER,
         to: `+${customerTelephone}`,
       })
