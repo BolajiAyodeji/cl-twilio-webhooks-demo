@@ -1,6 +1,6 @@
 # cl-twilio-webhooks-demo
 
-A minimal demo for sending an SMS notification to customers when an SKU that had finished is back in stock using Commerce Layer Webhooks and Twilio SMS. To get started, kindly read the comprehensive tutorial on [Commerce Layer's blog]().
+A minimal demo for sending an SMS notification to customers when an SKU that had finished is back in stock using Commerce Layer Webhooks and Twilio SMS. To get started, kindly read the comprehensive tutorial on [Commerce Layer's blog](https://commercelayer.io/blog/a-comprehensive-guide-to-commerce-layer-webhooks).
 
 ---
 
