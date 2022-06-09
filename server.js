@@ -25,8 +25,6 @@ app.post("/callback", (req, res) => {
   if (req.method === "POST" && signature === encode) {
     const payload = req.body;
 
-    // Send SMS with Twilio
-
     // Fetch the customer's name and telephone number from the custom metadata
     const customerName = payload.data.attributes.metadata.customer_name;
     const customerTelephone =
@@ -38,6 +36,7 @@ app.post("/callback", (req, res) => {
     // Fetch the SKU code from the payload's default attributes
     const skuCode = payload.data.attributes.sku_code;
 
+    // Send SMS with Twilio
     client.messages
       .create({
         body: `Hi ${customerName}!\n\nThe ${skuName} (${skuCode}) is now back in stock 🎉. You can place your order right away here: https://commercelayer.io/developers. Cheers!`,
