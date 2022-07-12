@@ -11,14 +11,21 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require("twilio")(accountSid, authToken);
 
-// Parse incoming JSON requests and put the parsed data in req.body
-app.use(express.json());
+// Fetch RAW incoming JSON requests and put in req.rawBody
+app.use(
+  express.json({
+    limit: "5mb",
+    verify: (req, res, buf) => {
+      req.rawBody = buf.toString();
+    },
+  })
+);
 
 app.post("/callback", (req, res) => {
   // Verify the payload coming from Commerce Layer
   const signature = req.headers["x-commercelayer-signature"];
   const hash = hmacSHA256(
-    JSON.stringify(req.body),
+    req.rawBody,
     process.env.CL_SHARED_SECRET
   );
   const encode = hash.toString(CryptoJS.enc.Base64);
